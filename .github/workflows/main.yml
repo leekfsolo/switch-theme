@@ -31,4 +31,5 @@ jobs:
 
       - name: Publish NPM Package to GCR
         run: |
-          npm publish --registry=https://asia-southeast1-docker.pkg.dev/nodejs-395910/test-github-actions/npm
+          npm publish --registry=https://asis-southeast1-npm.pkg.dev/nodejs-395910/test-github-actions/
+          //asis-southeast1-npm.pkg.dev/nodejs-395910/test-github-actions/:always-auth=true

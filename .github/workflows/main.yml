@@ -29,11 +29,9 @@ jobs:
       - name: Set up gcloud Cloud SDK environment
         uses: google-github-actions/setup-gcloud@v1.1.1
 
-      - id: "gcloud"
-        name: "gcloud"
-        run: |-
-          gcloud secrets versions access "latest" --secret "my-secret"
+      - name: "Use gcloud CLI"
+        run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
 
-      - name: Publish NPM Package to GCR
+      - name: Publish NPM Package to GAR
         run: |
           npm publish --registry=https://asia-southeast1-npm.pkg.dev/nodejs-395910/test-github-actions
